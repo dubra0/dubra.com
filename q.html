@@ -192,6 +192,90 @@ html[dir="rtl"] .support-option-btn svg{transform:scaleX(-1)}
 .foot b{color:var(--gold2)}
 .err{background:rgba(239,68,68,.1);color:#fca5a5;border:1px solid rgba(239,68,68,.3);font-weight:700;padding:16px;border-radius:14px;text-align:center;font-size:.92rem}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important}}
+
+/* ===== v3: OTP digits, guide, promo, WhatsApp ===== */
+.otp-timer{position:relative;width:34px;height:34px;flex:none;display:grid;place-items:center}
+.otp-timer svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.otp-timer circle{fill:none;stroke-width:3}
+.otp-timer .bgc{stroke:rgba(16,185,129,.18)}
+.otp-timer .pc{stroke:#34d399;stroke-linecap:round;stroke-dasharray:94.2;stroke-dashoffset:calc(94.2 * (1 - var(--p,1)));transition:stroke-dashoffset 1s linear}
+.otp-timer b{font-family:var(--f-en);font-size:.68rem;color:#6ee7b7}
+.otp-digits{display:flex;gap:5px;direction:ltr;flex:1;justify-content:center;flex-wrap:nowrap;min-width:0}
+.otp-digits span{width:30px;height:42px;flex:none;border-radius:9px;display:grid;place-items:center;font-family:var(--f-en);font-weight:900;font-size:1.3rem;color:#d1fae5;
+  background:linear-gradient(180deg,rgba(16,185,129,.28),rgba(6,40,30,.85));border:1px solid rgba(52,211,153,.5);box-shadow:0 6px 16px -8px rgba(16,185,129,.9),inset 0 1px 0 rgba(255,255,255,.15);
+  text-shadow:0 0 12px rgba(52,211,153,.9);animation:flipIn .55s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(var(--i) * 70ms)}
+@keyframes flipIn{from{transform:rotateX(90deg) translateY(-8px);opacity:0}to{transform:none;opacity:1}}
+.otp-row.got{animation:gotGlow 1.2s ease}
+@keyframes gotGlow{30%{box-shadow:0 0 0 3px rgba(52,211,153,.6),0 0 30px rgba(16,185,129,.7)}}
+.otp-search{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;color:#6ee7b7;font-weight:700;font-size:.85rem;padding:6px}
+.otp-search i{width:8px;height:8px;border-radius:50%;background:#34d399;animation:bounce 1s ease-in-out infinite}
+.otp-search i:nth-child(2){animation-delay:.15s}.otp-search i:nth-child(3){animation-delay:.3s}
+.otp-search span{margin-inline-start:6px}
+@keyframes bounce{40%{transform:translateY(-7px);opacity:1}0%,80%,100%{transform:none;opacity:.4}}
+
+.guide{position:relative;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:16px 14px;margin-bottom:16px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.guide-h{display:flex;justify-content:space-between;align-items:center;padding-inline:4px;margin-bottom:12px}
+.guide-h b{font-weight:900;background:linear-gradient(90deg,#fff,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.guide-h span{direction:ltr;font-family:var(--f-en);font-size:.66rem;font-weight:700;letter-spacing:.2em;color:var(--muted)}
+.g-track{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.g-track::-webkit-scrollbar{display:none}
+.g-card{scroll-snap-align:center;display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:18px;padding:14px;min-width:0}
+.g-txt{min-width:0;display:grid;gap:4px}
+.g-txt em{font-style:normal;font-family:var(--f-en);font-weight:900;font-size:.75rem;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a1204}
+.g-txt b{font-size:1rem}
+.g-txt p{margin:0;font-size:.82rem;color:var(--muted);line-height:1.6}
+.g-dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+.g-dots i{width:7px;height:7px;border-radius:99px;background:rgba(255,255,255,.2);transition:all .3s}
+.g-dots i.on{width:20px;background:var(--gold)}
+/* phone mockups */
+.phone{position:relative;flex:none;width:92px;height:168px;border-radius:18px;background:#0b0f1d;border:3px solid #2b3350;box-shadow:0 12px 26px -10px rgba(0,0,0,.9),inset 0 0 0 1px rgba(255,255,255,.05);overflow:hidden;direction:ltr}
+.phone::before{content:"";position:absolute;top:5px;left:50%;transform:translateX(-50%);width:28px;height:7px;border-radius:5px;background:#000;z-index:3}
+.scr{position:absolute;inset:0;padding:18px 7px 7px}
+.p1 .scr{background:linear-gradient(160deg,#3b2b7a,#122a5c)}
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:6px}
+.apps i{aspect-ratio:1;border-radius:7px;background:rgba(255,255,255,.18)}
+.apps i.as{background:linear-gradient(180deg,#38bdf8,#2563eb);display:grid;place-items:center;box-shadow:0 0 0 2px #fff,0 0 14px rgba(56,189,248,.9);animation:hl 1.6s ease-in-out infinite}
+.apps i.as::after{content:"A";color:#fff;font:900 13px var(--f-en)}
+@keyframes hl{50%{transform:scale(1.12)}}
+.tap{position:absolute;width:22px;height:22px;border-radius:50%;border:2px solid #fff;opacity:0;animation:tap 1.6s ease-out infinite;z-index:2;pointer-events:none}
+@keyframes tap{0%{transform:scale(.3);opacity:.9}70%,100%{transform:scale(1.6);opacity:0}}
+.p2 .scr,.p3 .scr{background:#f4f5f8}
+.as-top{display:flex;justify-content:space-between;align-items:center}
+.as-top b{font:900 11px var(--f-en);color:#111}
+.av{width:16px;height:16px;border-radius:50%;background:linear-gradient(135deg,#a5b4fc,#6366f1);box-shadow:0 0 0 2px #2563eb;animation:hl 1.6s ease-in-out infinite}
+.as-card{height:38px;border-radius:7px;margin-top:7px;background:linear-gradient(135deg,#fbcfe8,#c4b5fd)}
+.as-card.c2{background:linear-gradient(135deg,#bae6fd,#a7f3d0);height:30px}
+.as-card.c3{background:#e5e7eb;height:18px}
+.p3 .scr{display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:24px}
+.ap{width:18px;height:18px;border-radius:50%;background:#111}
+.p3 .ttl{font:800 8px var(--f-en);color:#111}
+.inp{width:100%;height:16px;border-radius:5px;background:#fff;border:1px solid #d1d5db;display:flex;align-items:center;padding-inline:4px;gap:2px}
+.inp i{width:3px;height:3px;border-radius:50%;background:#374151;opacity:0;animation:typ 2.4s steps(1) infinite}
+.inp i:nth-child(2){animation-delay:.2s}.inp i:nth-child(3){animation-delay:.4s}.inp i:nth-child(4){animation-delay:.6s}.inp i:nth-child(5){animation-delay:.8s}.inp i:nth-child(6){animation-delay:1s}
+.inp.i2 i{animation-delay:1.2s}.inp.i2 i:nth-child(2){animation-delay:1.3s}.inp.i2 i:nth-child(3){animation-delay:1.4s}.inp.i2 i:nth-child(4){animation-delay:1.5s}
+@keyframes typ{0%{opacity:0}5%,90%{opacity:1}}
+.sbtn{width:100%;height:16px;border-radius:5px;background:#2563eb;margin-top:2px}
+
+
+.g-part{justify-self:start;font-size:.66rem;font-weight:800;border-radius:99px;padding:2px 9px}
+.g-part.a{background:rgba(56,189,248,.15);color:#7dd3fc}
+.g-part.b{background:rgba(52,211,153,.15);color:#6ee7b7}
+.g-dots i.b{background:rgba(52,211,153,.3)}
+.g-dots i.b.on{background:#34d399}
+.scr.web{background:#f4f5f8;display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:16px}
+.url{width:100%;height:13px;border-radius:5px;background:#e5e7eb;color:#374151;font:700 5.5px var(--f-en);display:grid;place-items:center;margin-bottom:4px;white-space:nowrap;overflow:hidden}
+.mrow{width:100%;height:13px;border-radius:4px;background:#e5e7eb}
+.mrow.hl{background:#2563eb;color:#fff;font:800 5.5px var(--f-en);display:grid;place-items:center;box-shadow:0 0 0 2px #93c5fd;animation:hl 1.6s ease-in-out infinite}
+.mrow.sub{background:#dbeafe;color:#1e3a8a;font:800 5.5px var(--f-en);display:grid;place-items:center;width:86%}
+.num{direction:ltr;unicode-bidi:isolate;width:100%;height:18px;border-radius:5px;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;gap:4px;padding-inline:4px;font:700 6px var(--f-en);color:#111}
+.num i{font-style:normal;width:10px;height:10px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:8px;line-height:1}
+.num.old{opacity:.6;text-decoration:line-through}
+.num.old i{background:#ef4444}
+.num.new{border-color:#22c55e;box-shadow:0 0 0 2px rgba(34,197,94,.35);animation:hl 1.6s ease-in-out infinite}
+.num.new i{background:#22c55e}
+.sms{display:flex;gap:3px;margin-top:4px}
+.sms b{width:9px;height:12px;border-radius:3px;background:#fff;border:1px solid #d1d5db;animation:typ 2.4s steps(1) infinite}
+.sms b:nth-child(2){animation-delay:.2s}.sms b:nth-child(3){animation-delay:.4s}.sms b:nth-child(4){animation-delay:.6s}.sms b:nth-child(5){animation-delay:.8s}.sms b:nth-child(6){animation-delay:1s}
 </style>
 <!--HEAD-END-->
 </head>
@@ -352,7 +436,7 @@ const DEMO = false; // تەنها بۆ پیشاندان
 
 const T = {
   ku: { dir:'rtl', code:'KU', title:'زانیاری کارت', checking:'پشکنین…',
-        email:'Email', password:'Password', otpTitle:'کۆدی دڵنیایی (OTP)', otpWait:'بۆ بینینی کۆد، دوگمەی نوێکردنەوە دابگرە...', otpNone:'کۆد هێشتا نەگەیشتووە، چەند چرکەیەکی تر دووبارە نوێی بکەرەوە.', copy:'کۆپی کردن', copied:'کۆپی کرا ✓',
+        email:'Email', password:'Password', otpTitle:'کۆدی دڵنیایی (OTP)', otpWait:'بۆ بینینی کۆد، دوگمەی نوێکردنەوە دابگرە...', otpNone:'کۆد هێشتا نەگەیشتووە، چەند چرکەیەکی تر دووبارە نوێی بکەرەوە.', otpSearch:'چاوەڕێی کۆد دەکەین...', guideTitle:'چۆن داخلی بکەم؟', g1t:'App Store بکەرەوە', g1d:'تەنها لە App Store، نەک لە Settings.', g2t:'وێنەی پرۆفایل دابگرە', g2d:'لە سەرەوەی App Store، وێنەی پرۆفایلەکە دابگرە.', g3t:'ئیمەیڵ و پاسۆرد بنووسە', g3d:'پاشان کۆدی OTP لەم پەڕەیە وەربگرە و بینووسە.', partA:'داخلبوون لە App Store', partB:'گۆڕین بۆ ژمارەی خۆت', g4t:'بچۆ account.apple.com', g4d:'لە Safari بیکەرەوە و هەمان ئیمەیڵ و پاسۆرد و کۆدی OTP بنووسە.', g5t:'Sign-In and Security', g5d:'ئەم بەشە بکەرەوە، پاشان Account Security هەڵبژێرە.', g6t:'ژمارەی خۆت زیاد بکە', g6d:'لە Trusted Phone Numbers ژمارەکەت زیاد بکە و کۆدی SMS بنووسە، پاشان ژمارە کۆنەکە بسڕەوە.',  copy:'کۆپی کردن', copied:'کۆپی کرا ✓',
         updateBtn:'نوێکردنەوە', invalid:'ئەم QR کۆدە دروست نییە یاخود بەردەست نییە', net:'پەیوەندی نەکرا. ئینتەرنێت بپشکنە.', error:'هەڵە', thanks:'سوپاس بۆ متمانەکەت', modalBtn:'تێگەیشتم، پیشاندانی زانیارییەکان',
         warningTitle:'⚠️ ئاگادارییەکی گرنگ', warningText:'تکایە بەهیچ شێوەیەک ئەم Apple ID له Settings ی موبایلەکەت داخل مەکە! تەنها لە App Store داخل بکە.<br><br>کاتی داخلکردنی، تکایە ڕاستەوخۆ بیخەرە سەر ژمارەی موبایلی خۆت.',
         supOpen:'پەیوەندی بە سەپۆرت (Support)', supTitle:'تکایە کێشەکەت دیاری بکە:',
@@ -360,7 +444,7 @@ const T = {
         supWait:'چاوەڕێ بکە...', supDone:'✅ داواکارییەکەت نێردرا بۆ سەپۆرت. بە زوویی چارەسەر دەکرێت.', supAlready:'داواکارییەکەت پێشتر نێردراوە.', supErr:'نەنێردرا، دووبارە هەوڵ بدەرەوە.',
         customPlaceholder:'پرسیار یان کێشەکەت لێرە بنووسە...' },
   ar: { dir:'rtl', code:'AR', title:'معلومات البطاقة', checking:'جارٍ التحقق…',
-        email:'Email', password:'Password', otpTitle:'رمز التحقق (OTP)', otpWait:'لإظهار الرمز، اضغط على زر التحديث...', otpNone:'لم يصل الرمز بعد، حدّث مرة أخرى بعد ثوانٍ.', copy:'نسخ', copied:'تم النسخ ✓',
+        email:'Email', password:'Password', otpTitle:'رمز التحقق (OTP)', otpWait:'لإظهار الرمز، اضغط على زر التحديث...', otpNone:'لم يصل الرمز بعد، حدّث مرة أخرى بعد ثوانٍ.', otpSearch:'بانتظار الرمز...', guideTitle:'كيف أسجّل الدخول؟', g1t:'افتح App Store', g1d:'من App Store فقط، وليس من الإعدادات.', g2t:'اضغط على صورة الحساب', g2d:'في أعلى App Store اضغط على صورة الملف الشخصي.', g3t:'أدخل البريد وكلمة المرور', g3d:'ثم خذ رمز OTP من هذه الصفحة وأدخله.', partA:'الدخول إلى App Store', partB:'التحويل إلى رقمك', g4t:'افتح account.apple.com', g4d:'من Safari أدخل نفس البريد وكلمة المرور ورمز OTP.', g5t:'Sign-In and Security', g5d:'افتح هذا القسم ثم اختر Account Security.', g6t:'أضف رقمك', g6d:'في Trusted Phone Numbers أضف رقمك وأدخل رمز SMS، ثم احذف الرقم القديم.',  copy:'نسخ', copied:'تم النسخ ✓',
         updateBtn:'تحديث', invalid:'رمز QR هذا غير صالح أو غير موجود', net:'تعذّر الاتصال. تحقّق من الإنترنت.', error:'خطأ', thanks:'شكراً لثقَتِك', modalBtn:'فهمت، عرض المعلومات',
         warningTitle:'⚠️ تنبيه مهم', warningText:'يرجى عدم إدخال Apple ID هذا في إعدادات الهاتف (Settings) نهائياً! قم بإدخاله في App Store فقط.<br><br>عند الإدخال، يرجى وضعه مباشرة على رقم هاتفك.',
         supOpen:'الاتصال بالدعم (Support)', supTitle:'يرجى تحديد مشكلتك:',
@@ -368,7 +452,7 @@ const T = {
         supWait:'جاري الانتظار...', supDone:'✅ تم إرسال طلبك إلى الدعم. سيتم الحل قريباً.', supAlready:'تم إرسال طلبك مسبقاً.', supErr:'فشل الإرسال، حاول مجدداً.',
         customPlaceholder:'اكتب سؤالك أو مشكلتك هنا...' },
   en: { dir:'ltr', code:'EN', title:'Card details', checking:'Verifying…',
-        email:'Email', password:'Password', otpTitle:'Verification Code (OTP)', otpWait:'To see the code, click the update button...', otpNone:'No code yet — refresh again in a few seconds.', copy:'Copy', copied:'Copied ✓',
+        email:'Email', password:'Password', otpTitle:'Verification Code (OTP)', otpWait:'To see the code, click the update button...', otpNone:'No code yet — refresh again in a few seconds.', otpSearch:'Waiting for the code...', guideTitle:'How to sign in', g1t:'Open the App Store', g1d:'App Store only — not Settings.', g2t:'Tap your profile picture', g2d:'At the top of the App Store, tap the profile icon.', g3t:'Enter email & password', g3d:'Then get the OTP code from this page and type it in.', partA:'Sign in to App Store', partB:'Switch to your number', g4t:'Go to account.apple.com', g4d:'Open it in Safari and sign in with the same email, password and OTP code.', g5t:'Sign-In and Security', g5d:'Open this section, then choose Account Security.', g6t:'Add your own number', g6d:'Under Trusted Phone Numbers, add your number and enter the SMS code, then delete the old number.',  copy:'Copy', copied:'Copied ✓',
         updateBtn:'Refresh', invalid:'This QR code is not valid or available', net:'Couldn’t connect. Check your internet.', error:'Error', thanks:'Thank you for your trust', modalBtn:'Got it, show details',
         warningTitle:'⚠ Important Warning', warningText:'Please do NOT sign in with this Apple ID in your phone Settings! Sign in via App Store only.<br><br>When signing in, please use your own mobile phone number directly.',
         supOpen:'Contact Support', supTitle:'Please select your issue:',
@@ -534,6 +618,7 @@ function render(){
             <span>${t.otpTitle}</span>
           </div>
           <div class="otp-actions">
+            <span class="otp-timer" id="otpTimer" hidden><svg viewBox="0 0 36 36"><circle class="bgc" cx="18" cy="18" r="15"/><circle class="pc" cx="18" cy="18" r="15"/></svg><b>90</b></span>
             <button class="update-btn" id="updateOtpBtn" type="button" title="Refresh">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
               <span>${t.updateBtn}</span>
@@ -583,13 +668,13 @@ function render(){
     if (updateBtnEl) {
       updateBtnEl.onclick = () => {
         updateBtnEl.classList.add('spinning');
-        fetchOtp(otpLink, true);
+        startOtpPoll(otpLink);
         setTimeout(() => updateBtnEl.classList.remove('spinning'), 600);
       };
     }
   }
 
-  supportContainer.innerHTML = `
+  supportContainer.innerHTML = guideHTML(t) + `
     <div class="support-section" id="supportBox">
       <button type="button" id="supportToggleBtn" class="support-btn-main">
         <svg style="width:18px;height:18px" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636l3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
@@ -617,6 +702,7 @@ function render(){
       <p id="supportMsg" class="support-msg" style="display:none"></p>
     </div>
   `;
+  initGuide();
 
   box.querySelectorAll('.copy[data-v]').forEach(b => b.onclick = () => {
     const done = () => { b.textContent = t.copied; b.classList.add('done'); setTimeout(() => { b.textContent = t.copy; b.classList.remove('done'); }, 1600); };
@@ -624,6 +710,44 @@ function render(){
   });
 }
 
+let demoTicks = 0, pollTimer = null, pollClock = null, pollUntil = 0;
+const POLL_MS = 90000;
+function startOtpPoll(url){
+  clearTimeout(pollTimer); clearInterval(pollClock);
+  pollUntil = Date.now() + POLL_MS;
+  const tm = document.getElementById('otpTimer');
+  const paint = () => { if (!tm) return; const left = Math.max(0, Math.ceil((pollUntil - Date.now()) / 1000));
+    tm.hidden = left <= 0; tm.style.setProperty('--p', left / (POLL_MS / 1000)); tm.querySelector('b').textContent = left; if (left <= 0) clearInterval(pollClock); };
+  paint(); pollClock = setInterval(paint, 1000);
+  const loop = async () => {
+    if (!document.getElementById('otpRow')) return;
+    const c = await fetchOtp(url, true);
+    if (Date.now() < pollUntil) pollTimer = setTimeout(loop, 4000);
+    else if (!c) { const row = document.getElementById('otpRow'); if (row && !row.querySelector('.otp-digits')) row.innerHTML = `<div class="otp-empty">${T[lang || 'ku'].otpNone}</div>`; }
+  };
+  loop();
+}
+
+const PHONES = {
+  1: '<div class="scr"><div class="apps"><i></i><i></i><i></i><i></i><i class="as"></i><i></i><i></i><i></i><i></i></div></div><span class="tap" style="left:35px;top:62px"></span>',
+  2: '<div class="scr"><div class="as-top"><b>Today</b><span class="av"></span></div><div class="as-card"></div><div class="as-card c2"></div><div class="as-card c3"></div></div><span class="tap" style="right:5px;top:15px"></span>',
+  3: '<div class="scr"><span class="ap"></span><span class="ttl">Apple Account</span><div class="inp"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="inp i2"><i></i><i></i><i></i><i></i></div><div class="sbtn"></div></div><span class="tap" style="left:35px;top:118px;animation-delay:1.8s"></span>',
+  4: '<div class="scr web"><div class="url">account.apple.com</div><span class="ap"></span><div class="inp"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="inp i2"><i></i><i></i><i></i><i></i></div><div class="sbtn"></div></div><span class="tap" style="left:35px;top:122px;animation-delay:1.8s"></span>',
+  5: '<div class="scr web"><div class="url">account.apple.com</div><div class="mrow"></div><div class="mrow hl">Sign-In and Security</div><div class="mrow"></div><div class="mrow sub">Account Security</div><div class="mrow"></div></div><span class="tap" style="left:35px;top:52px"></span>',
+  6: '<div class="scr web"><div class="url">Trusted Numbers</div><div class="num old"><i>−</i>+964 ••• 08</div><div class="num new"><i>+</i>+964 750 •••</div><div class="sms"><b></b><b></b><b></b><b></b><b></b><b></b></div></div><span class="tap" style="left:35px;top:66px"></span>'
+};
+function guideHTML(t){
+  const steps = [1,2,3];
+  return `<section class="guide"><div class="guide-h"><b>${t.guideTitle}</b><span>3 STEPS</span></div>
+    <div class="g-track" id="gTrack">${steps.map(n => `<article class="g-card"><div class="phone p${n}">${PHONES[n]}</div>
+      <div class="g-txt"><em>${n}</em><b>${t['g'+n+'t']}</b><p>${t['g'+n+'d']}</p></div></article>`).join('')}</div>
+    <div class="g-dots" id="gDots">${steps.map((n, i) => `<i class="${i ? '' : 'on'}${n > 3 ? ' b' : ''}"></i>`).join('')}</div></section>`;
+}
+function initGuide(){
+  const tr = document.getElementById('gTrack'), dots = document.querySelectorAll('#gDots i');
+  if (!tr) return;
+  tr.addEventListener('scroll', () => { const i = Math.round(Math.abs(tr.scrollLeft) / tr.clientWidth); dots.forEach((d, k) => d.classList.toggle('on', k === i)); }, { passive: true });
+}
 async function fetchOtp(url, isManual = false) {
   const row = document.getElementById('otpRow');
   if (!row) return;
@@ -631,7 +755,8 @@ async function fetchOtp(url, isManual = false) {
   try {
     let codeVal = '';
     if (DEMO) {
-      codeVal = String(Math.floor(100000 + Math.random() * 900000));
+      demoTicks++;
+      codeVal = demoTicks < 3 ? '' : (lastDetectedOtp || String(Math.floor(100000 + Math.random() * 900000)));
     } else {
       // ١) سێرڤەر لینکەکە دەخوێنێتەوە (هەموو جۆرە لینکێک، تەنانەت http)
       try {
@@ -656,25 +781,24 @@ async function fetchOtp(url, isManual = false) {
     }
 
     if (codeVal) {
-      if (codeVal !== lastDetectedOtp || isManual) {
-        if (codeVal !== lastDetectedOtp && lastDetectedOtp !== '') {
-          playNotificationSound();
-        }
-        lastDetectedOtp = codeVal;
+      const isNew = codeVal !== lastDetectedOtp;
+      if (isNew && lastDetectedOtp !== '') playNotificationSound();
+      if (isNew) { try { navigator.vibrate && navigator.vibrate([30, 40, 30]); } catch(e) {} }
+      lastDetectedOtp = codeVal;
+      if (isNew || !row.querySelector('.otp-digits')) {
+        row.innerHTML = `<div class="otp-digits">${codeVal.split('').map((d, i) => `<span style="--i:${i}">${esc(d)}</span>`).join('')}</div>
+          <button class="copy" type="button" data-v="${esc(codeVal)}">${t.copy}</button>`;
+        row.classList.remove('got'); void row.offsetWidth; row.classList.add('got');
+        row.querySelector('.copy').onclick = function() {
+          const b = this;
+          const done = () => { b.textContent = t.copied; b.classList.add('done'); setTimeout(() => { b.textContent = t.copy; b.classList.remove('done'); }, 1600); };
+          if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.v).then(done).catch(() => {});
+        };
       }
-
-      row.innerHTML = `
-        <div class="otp-val">${esc(codeVal)}</div>
-        <button class="copy" type="button" data-v="${esc(codeVal)}">${t.copy}</button>
-      `;
-      row.querySelector('.copy').onclick = function() {
-        const b = this;
-        const done = () => { b.textContent = t.copied; b.classList.add('done'); setTimeout(() => { b.textContent = t.copy; b.classList.remove('done'); }, 1600); };
-        if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.v).then(done).catch(() => {});
-      };
-    } else {
-      row.innerHTML = `<div class="otp-empty">${t.otpNone}</div>`;
+    } else if (!row.querySelector('.otp-digits')) {
+      row.innerHTML = `<div class="otp-search"><i></i><i></i><i></i><span>${t.otpSearch}</span></div>`;
     }
+    return codeVal;
   } catch(e) {}
 }
 
