@@ -86,7 +86,7 @@ button{font:inherit}
 .logo-box::after{content:"";position:absolute;inset:-40%;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.32) 50%,transparent 58%);transform:translateX(-70%);animation:gleam 3.6s ease-in-out 1.2s infinite;pointer-events:none}
 @keyframes float{50%{transform:translateY(-6px)}}
 @keyframes gleam{0%{transform:translateX(-70%)}45%,100%{transform:translateX(70%)}}
-.logo-box svg,.modal-logo svg{display:block;width:100%;height:100%}
+.logo-box img,.modal-logo img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
 .hero h1{margin:6px 0 0;font-family:var(--f-en);font-size:1.6rem;font-weight:900;letter-spacing:.06em;line-height:1.2;direction:ltr;
   background:linear-gradient(90deg,#fff 0%,var(--gold2) 25%,var(--gold) 50%,var(--gold2) 75%,#fff 100%);background-size:200% 100%;
   -webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 4s linear infinite;filter:drop-shadow(0 4px 18px rgba(247,201,72,.3))}
@@ -201,9 +201,9 @@ html[dir="rtl"] .support-option-btn svg{transform:scaleX(-1)}
 .otp-timer .pc{stroke:#34d399;stroke-linecap:round;stroke-dasharray:94.2;stroke-dashoffset:calc(94.2 * (1 - var(--p,1)));transition:stroke-dashoffset 1s linear}
 .otp-timer b{font-family:var(--f-en);font-size:.68rem;color:#6ee7b7}
 .otp-digits{display:flex;gap:5px;direction:ltr;flex:1;justify-content:center;flex-wrap:nowrap;min-width:0}
-.otp-digits span{width:30px;height:42px;flex:none;border-radius:9px;display:grid;place-items:center;font-family:var(--f-en);font-weight:900;font-size:1.3rem;color:#d1fae5;
+.otp-digits span{width:30px;height:42px;flex:none;border-radius:99px;display:grid;place-items:center;font-family:var(--f-en);font-weight:900;font-size:1.3rem;color:#d1fae5;
   background:linear-gradient(180deg,rgba(16,185,129,.28),rgba(6,40,30,.85));border:1px solid rgba(52,211,153,.5);box-shadow:0 6px 16px -8px rgba(16,185,129,.9),inset 0 1px 0 rgba(255,255,255,.15);
-  text-shadow:0 0 12px rgba(52,211,153,.9);animation:flipIn .55s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(var(--i) * 70ms)}
+  text-shadow:0 0 12px rgba(16,185,129,.9);animation:flipIn .55s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(var(--i) * 70ms)}
 @keyframes flipIn{from{transform:rotateX(90deg) translateY(-8px);opacity:0}to{transform:none;opacity:1}}
 .otp-row.got{animation:gotGlow 1.2s ease}
 @keyframes gotGlow{30%{box-shadow:0 0 0 3px rgba(52,211,153,.6),0 0 30px rgba(16,185,129,.7)}}
@@ -287,30 +287,7 @@ html[dir="rtl"] .support-option-btn svg{transform:scaleX(-1)}
   <!-- Modal بۆ هەڵبژاردنی زمان لە سەرەتادا -->
   <div class="lang-modal-overlay" id="langSelectModal">
     <div class="lang-select-card">
-      <div class="logo-box"><svg viewBox="0 0 500 500" role="img" aria-label="Company Du Bra">
-<defs>
-<linearGradient id="gda" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4c8"/><stop offset=".42" stop-color="#f7c948"/><stop offset=".7" stop-color="#e2a52a"/><stop offset="1" stop-color="#a86a0a"/></linearGradient>
-<radialGradient id="bga" cx="50%" cy="36%" r="72%"><stop offset="0" stop-color="#1c2f66"/><stop offset=".6" stop-color="#0a1330"/><stop offset="1" stop-color="#040814"/></radialGradient>
-<radialGradient id="ina" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#2a4ea8" stop-opacity=".55"/><stop offset="1" stop-color="#2a4ea8" stop-opacity="0"/></radialGradient>
-<filter id="gla" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<path id="tpa" d="M 80,250 A 170,170 0 1,1 420,250"/>
-<path id="bpa" d="M 410,250 A 160,160 0 0,1 90,250"/>
-</defs>
-<circle cx="250" cy="250" r="244" fill="url(#bga)"/>
-<circle cx="250" cy="250" r="236" fill="none" stroke="url(#gda)" stroke-width="12"/>
-<circle cx="250" cy="250" r="214" fill="none" stroke="url(#gda)" stroke-width="3" opacity=".85"/>
-<circle cx="250" cy="250" r="226" fill="none" stroke="#f7c948" stroke-width="1.5" stroke-dasharray="1 9" opacity=".7"/>
-<circle cx="250" cy="250" r="128" fill="url(#ina)"/>
-<circle cx="250" cy="250" r="128" fill="none" stroke="url(#gda)" stroke-width="3"/>
-<circle cx="250" cy="250" r="118" fill="none" stroke="#f7c948" stroke-width="1" stroke-dasharray="2 8" opacity=".6"/>
-<g fill="url(#gda)" font-family="Outfit, Arial, sans-serif" font-weight="800">
-<text font-size="30" letter-spacing="4"><textPath href="#tpa" startOffset="50%" text-anchor="middle">COMPANY DU BRA</textPath></text>
-<text font-size="27" letter-spacing="3.5"><textPath href="#bpa" startOffset="50%" text-anchor="middle">IRAQ KURDISTAN</textPath></text>
-</g>
-<g fill="url(#gda)"><path transform="translate(68,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(432,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/></g>
-<g fill="url(#gda)" filter="url(#gla)" transform="translate(196,132) scale(0.55)"><path d="M117.678,102.053 c-2.037,-16.906 11.458,-25.26 12.016,-25.618 c-6.55,-9.578 -16.745,-10.876 -20.316,-11.168 c-8.65,-0.902 -16.924,5.088 -21.309,5.088 c-4.404,0 -11.237,-4.96 -18.455,-4.832 c-9.489,0.178 -18.232,5.516 -23.102,14.004 c-9.873,17.135 -2.529,42.455 7.021,56.328 c4.814,6.974 10.556,14.777 18.093,14.492 c7.284,-0.292 10.038,-4.707 18.847,-4.707 c8.775,0 11.432,4.707 19.204,4.553 c7.872,-0.254 13.01,-7.433 17.794,-14.429 c5.636,-8.188 7.954,-16.108 8.083,-16.517 C118.411,103.58 117.678,102.053 117.678,102.053 Z"/><path d="M102.404,36.568 c4.116,-4.996 6.879,-11.944 6.126,-18.868 c-5.922,0.241 -13.084,3.948 -17.332,8.944 c-3.805,4.444 -7.139,11.536 -6.079,18.368 C91.076,45.344 98.118,41.42 102.404,36.568 Z"/></g>
-<text x="250" y="322" fill="url(#gda)" font-family="Outfit, Arial, sans-serif" font-weight="900" font-size="74" text-anchor="middle" letter-spacing="2" filter="url(#gla)">DB</text>
-</svg></div>
+      <div class="logo-box"><img src="photo_2026-10-17_11-31-25.jpg" alt="AS ID Logo"></div>
       <h3 class="lang-select-title">تکایە زمانێک هەڵبژێرە<br><span style="font-size:0.8rem;color:var(--muted);font-weight:500">Please select your language</span></h3>
       <div class="lang-options">
         <button class="lang-option-btn" type="button" onclick="selectInitialLang('ku')">کوردی (Kurdish)</button>
@@ -323,30 +300,7 @@ html[dir="rtl"] .support-option-btn svg{transform:scaleX(-1)}
   <!-- Modal هۆشداری Apple ID -->
   <div class="modal-overlay" id="warningModal" style="display:none">
     <div class="modal-card">
-      <div class="modal-logo"><svg viewBox="0 0 500 500" role="img" aria-label="Company Du Bra">
-<defs>
-<linearGradient id="gdb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4c8"/><stop offset=".42" stop-color="#f7c948"/><stop offset=".7" stop-color="#e2a52a"/><stop offset="1" stop-color="#a86a0a"/></linearGradient>
-<radialGradient id="bgb" cx="50%" cy="36%" r="72%"><stop offset="0" stop-color="#1c2f66"/><stop offset=".6" stop-color="#0a1330"/><stop offset="1" stop-color="#040814"/></radialGradient>
-<radialGradient id="inb" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#2a4ea8" stop-opacity=".55"/><stop offset="1" stop-color="#2a4ea8" stop-opacity="0"/></radialGradient>
-<filter id="glb" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<path id="tpb" d="M 80,250 A 170,170 0 1,1 420,250"/>
-<path id="bpb" d="M 410,250 A 160,160 0 0,1 90,250"/>
-</defs>
-<circle cx="250" cy="250" r="244" fill="url(#bgb)"/>
-<circle cx="250" cy="250" r="236" fill="none" stroke="url(#gdb)" stroke-width="12"/>
-<circle cx="250" cy="250" r="214" fill="none" stroke="url(#gdb)" stroke-width="3" opacity=".85"/>
-<circle cx="250" cy="250" r="226" fill="none" stroke="#f7c948" stroke-width="1.5" stroke-dasharray="1 9" opacity=".7"/>
-<circle cx="250" cy="250" r="128" fill="url(#inb)"/>
-<circle cx="250" cy="250" r="128" fill="none" stroke="url(#gdb)" stroke-width="3"/>
-<circle cx="250" cy="250" r="118" fill="none" stroke="#f7c948" stroke-width="1" stroke-dasharray="2 8" opacity=".6"/>
-<g fill="url(#gdb)" font-family="Outfit, Arial, sans-serif" font-weight="800">
-<text font-size="30" letter-spacing="4"><textPath href="#tpb" startOffset="50%" text-anchor="middle">COMPANY DU BRA</textPath></text>
-<text font-size="27" letter-spacing="3.5"><textPath href="#bpb" startOffset="50%" text-anchor="middle">IRAQ KURDISTAN</textPath></text>
-</g>
-<g fill="url(#gdb)"><path transform="translate(68,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(432,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/></g>
-<g fill="url(#gdb)" filter="url(#glb)" transform="translate(196,132) scale(0.55)"><path d="M117.678,102.053 c-2.037,-16.906 11.458,-25.26 12.016,-25.618 c-6.55,-9.578 -16.745,-10.876 -20.316,-11.168 c-8.65,-0.902 -16.924,5.088 -21.309,5.088 c-4.404,0 -11.237,-4.96 -18.455,-4.832 c-9.489,0.178 -18.232,5.516 -23.102,14.004 c-9.873,17.135 -2.529,42.455 7.021,56.328 c4.814,6.974 10.556,14.777 18.093,14.492 c7.284,-0.292 10.038,-4.707 18.847,-4.707 c8.775,0 11.432,4.707 19.204,4.553 c7.872,-0.254 13.01,-7.433 17.794,-14.429 c5.636,-8.188 7.954,-16.108 8.083,-16.517 C118.411,103.58 117.678,102.053 117.678,102.053 Z"/><path d="M102.404,36.568 c4.116,-4.996 6.879,-11.944 6.126,-18.868 c-5.922,0.241 -13.084,3.948 -17.332,8.944 c-3.805,4.444 -7.139,11.536 -6.079,18.368 C91.076,45.344 98.118,41.42 102.404,36.568 Z"/></g>
-<text x="250" y="322" fill="url(#gdb)" font-family="Outfit, Arial, sans-serif" font-weight="900" font-size="74" text-anchor="middle" letter-spacing="2" filter="url(#glb)">DB</text>
-</svg></div>
+      <div class="modal-logo"><img src="photo_2026-10-17_11-31-25.jpg" alt="AS ID Logo"></div>
       <h3 class="modal-title" id="modalTitleText">⚠️ ئاگادارییەکی گرنگ</h3>
       <div class="modal-text" id="modalDescText">
         تکایە بەهیچ شێوەیەک ئەم Apple ID له Settings ی موبایلەکەت داخل مەکە! تەنها لە App Store داخل بکە.<br><br>
@@ -379,30 +333,7 @@ html[dir="rtl"] .support-option-btn svg{transform:scaleX(-1)}
       <div class="rays"></div><div class="glow"></div>
       <div class="halo"></div><div class="halo h2"></div>
       <div class="orbit"><i></i><i></i><i></i></div>
-      <div class="logo-box"><svg viewBox="0 0 500 500" role="img" aria-label="Company Du Bra">
-<defs>
-<linearGradient id="gdc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4c8"/><stop offset=".42" stop-color="#f7c948"/><stop offset=".7" stop-color="#e2a52a"/><stop offset="1" stop-color="#a86a0a"/></linearGradient>
-<radialGradient id="bgc" cx="50%" cy="36%" r="72%"><stop offset="0" stop-color="#1c2f66"/><stop offset=".6" stop-color="#0a1330"/><stop offset="1" stop-color="#040814"/></radialGradient>
-<radialGradient id="inc" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#2a4ea8" stop-opacity=".55"/><stop offset="1" stop-color="#2a4ea8" stop-opacity="0"/></radialGradient>
-<filter id="glc" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<path id="tpc" d="M 80,250 A 170,170 0 1,1 420,250"/>
-<path id="bpc" d="M 410,250 A 160,160 0 0,1 90,250"/>
-</defs>
-<circle cx="250" cy="250" r="244" fill="url(#bgc)"/>
-<circle cx="250" cy="250" r="236" fill="none" stroke="url(#gdc)" stroke-width="12"/>
-<circle cx="250" cy="250" r="214" fill="none" stroke="url(#gdc)" stroke-width="3" opacity=".85"/>
-<circle cx="250" cy="250" r="226" fill="none" stroke="#f7c948" stroke-width="1.5" stroke-dasharray="1 9" opacity=".7"/>
-<circle cx="250" cy="250" r="128" fill="url(#inc)"/>
-<circle cx="250" cy="250" r="128" fill="none" stroke="url(#gdc)" stroke-width="3"/>
-<circle cx="250" cy="250" r="118" fill="none" stroke="#f7c948" stroke-width="1" stroke-dasharray="2 8" opacity=".6"/>
-<g fill="url(#gdc)" font-family="Outfit, Arial, sans-serif" font-weight="800">
-<text font-size="30" letter-spacing="4"><textPath href="#tpc" startOffset="50%" text-anchor="middle">COMPANY DU BRA</textPath></text>
-<text font-size="27" letter-spacing="3.5"><textPath href="#bpc" startOffset="50%" text-anchor="middle">IRAQ KURDISTAN</textPath></text>
-</g>
-<g fill="url(#gdc)"><path transform="translate(68,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(432,250) scale(1.25)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,200) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(96,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/><path transform="translate(404,300) scale(0.6)" d="M0,-10 L2.4,-2.4 L10,0 L2.4,2.4 L0,10 L-2.4,2.4 L-10,0 L-2.4,-2.4 Z"/></g>
-<g fill="url(#gdc)" filter="url(#glc)" transform="translate(196,132) scale(0.55)"><path d="M117.678,102.053 c-2.037,-16.906 11.458,-25.26 12.016,-25.618 c-6.55,-9.578 -16.745,-10.876 -20.316,-11.168 c-8.65,-0.902 -16.924,5.088 -21.309,5.088 c-4.404,0 -11.237,-4.96 -18.455,-4.832 c-9.489,0.178 -18.232,5.516 -23.102,14.004 c-9.873,17.135 -2.529,42.455 7.021,56.328 c4.814,6.974 10.556,14.777 18.093,14.492 c7.284,-0.292 10.038,-4.707 18.847,-4.707 c8.775,0 11.432,4.707 19.204,4.553 c7.872,-0.254 13.01,-7.433 17.794,-14.429 c5.636,-8.188 7.954,-16.108 8.083,-16.517 C118.411,103.58 117.678,102.053 117.678,102.053 Z"/><path d="M102.404,36.568 c4.116,-4.996 6.879,-11.944 6.126,-18.868 c-5.922,0.241 -13.084,3.948 -17.332,8.944 c-3.805,4.444 -7.139,11.536 -6.079,18.368 C91.076,45.344 98.118,41.42 102.404,36.568 Z"/></g>
-<text x="250" y="322" fill="url(#gdc)" font-family="Outfit, Arial, sans-serif" font-weight="900" font-size="74" text-anchor="middle" letter-spacing="2" filter="url(#glc)">DB</text>
-</svg></div>
+      <div class="logo-box"><img src="photo_2026-10-17_11-31-25.jpg" alt="AS ID Logo"></div>
       <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i><i class="spark s4"></i>
     </div>
     <h1>Company Du Bra</h1>
